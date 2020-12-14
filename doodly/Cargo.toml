@@ -1,0 +1,18 @@
+[lib]
+crate-type = [ "staticlib" ] # to generate a `lib<package_name>.a`
+                             # i.e. an archive of `.o` files
+
+[package]
+name = "doodly"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies] # you may depend on libc if you so wish:
+# libc = { version = "*", default-features = false }
+generic-array = "0.14.4"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
